@@ -173,6 +173,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductManagementController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -238,6 +239,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\ProductManagement\Index.cshtml" />
+    <Content Include="Views\ProductManagement\Create.cshtml" />
+    <Content Include="Views\ProductManagement\Edit.cshtml" />
+    <Content Include="Views\ProductManagement\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -254,6 +259,24 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EOnlineShop.core\EOnlineShop.Core.csproj">
+      <Project>{d5384918-aa01-46f2-a63d-875e81d5ee6a}</Project>
+      <Name>EOnlineShop.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EOnlineShop.DataAccess.InMemory\EOnlineShop.DataAccess.InMemory.csproj">
+      <Project>{cac1c0ec-166f-4c09-9279-40d215d3141e}</Project>
+      <Name>EOnlineShop.DataAccess.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EOnlineShop.DataAccess.SQL\EOnlineShop.DataAccess.SQL.csproj">
+      <Project>{12f6cb96-1585-4a81-b874-f3220a109474}</Project>
+      <Name>EOnlineShop.DataAccess.SQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EOnlineShop.Services\EOnlineShop.Services.csproj">
+      <Project>{b5cf2092-1897-42b3-996c-afb28ff36f57}</Project>
+      <Name>EOnlineShop.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -5,16 +5,19 @@ using System.Reflection.Emit;
 using System.Web;
 using System.Web.Mvc;
 using EOnlineShop.core.Models;
+using EOnlineShop.core.ViewModel;
 using EOnlineShop.DataAccess.InMemory;
 namespace EOnlineShop.WebUI.Controllers
 {
     public class ProductManagementController : Controller
     {
-        private ProductRepository context;
+        public ProductRepository context;
+        public ProductCategoryRepository productCategories;
 
         public ProductManagementController()
         {
             context = new ProductRepository();
+            productCategories = new ProductCategoryRepository();
         }
         // GET: ProductManager
         public ActionResult Index()
@@ -25,8 +28,12 @@ namespace EOnlineShop.WebUI.Controllers
 
         public ActionResult Create()
         {
-            Product product = new Product();
-            return View(product);
+            ProductManagerViewModel model = new ProductManagerViewModel();
+
+            model.Product = new Product();
+            model.ProductCategories = productCategories.Collection();
+
+            return View(model);
         }
         [HttpPost]
         public ActionResult Create(Product product)
@@ -47,9 +54,16 @@ namespace EOnlineShop.WebUI.Controllers
             {
                 return HttpNotFound();
             }
+            else
+            {
+                ProductManagerViewModel viewModel = new ProductManagerViewModel();
+                viewModel.Product = product;
+                viewModel.ProductCategories = productCategories.Collection();
 
-            return View(product);
+                return View(viewModel);
+            }
         }
+    
 
         [HttpPost]
         public ActionResult Edit(Product product, string Id)

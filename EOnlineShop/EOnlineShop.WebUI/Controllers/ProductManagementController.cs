@@ -1,23 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Web;
 using System.Web.Mvc;
 using EOnlineShop.core.Models;
 using EOnlineShop.core.ViewModel;
+using EOnlineShop.core.ViewModel;
 using EOnlineShop.DataAccess.InMemory;
+using EOnlineShop.DataAccess.InMemory.MyShop.DataAccess.InMemory;
+
 namespace EOnlineShop.WebUI.Controllers
 {
     public class ProductManagementController : Controller
     {
-        public ProductRepository context;
-        public ProductCategoryRepository productCategories;
+        private InMemoryRepository<Product> context;
+        private InMemoryRepository<ProductCategory> productCategories;
 
         public ProductManagementController()
         {
-            context = new ProductRepository();
-            productCategories = new ProductCategoryRepository();
+            context = new InMemoryRepository<Product>();
+            productCategories = new InMemoryRepository<ProductCategory>();
+        }
+        public ProductManagementController(InMemoryRepository<Product> productContext, InMemoryRepository<ProductCategory> productCategoryContext)
+        {
+            context = productContext;
+            productCategories = productCategoryContext;
         }
         // GET: ProductManager
         public ActionResult Index()
@@ -28,23 +37,34 @@ namespace EOnlineShop.WebUI.Controllers
 
         public ActionResult Create()
         {
-            ProductManagerViewModel model = new ProductManagerViewModel();
-
-            model.Product = new Product();
-            model.ProductCategories = productCategories.Collection();
-
-            return View(model);
+            ProductManagerViewModel viewModel = new ProductManagerViewModel();
+            viewModel.Product = new Product();
+            viewModel.ProductCategories = productCategories.Collection();
+            return View(viewModel);
         }
+
         [HttpPost]
-        public ActionResult Create(Product product)
+        public ActionResult Create(Product product, HttpPostedFileBase file)
         {
             if (!ModelState.IsValid)
             {
                 return View(product);
             }
-            context.Insert(product);
-            context.Commit();
-            return RedirectToAction("Index");
+            else
+            {
+
+                if (file != null)
+                {
+                    product.Image = product.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//ProductImages//") + product.Image);
+                }
+
+                context.Insert(product);
+                context.Commit();
+
+                return RedirectToAction("Index");
+            }
+
         }
 
         public ActionResult Edit(string Id)
@@ -63,12 +83,12 @@ namespace EOnlineShop.WebUI.Controllers
                 return View(viewModel);
             }
         }
-    
 
         [HttpPost]
-        public ActionResult Edit(Product product, string Id)
+        public ActionResult Edit(Product product, string Id, HttpPostedFileBase file)
         {
             Product productToEdit = context.Find(Id);
+
             if (productToEdit == null)
             {
                 return HttpNotFound();
@@ -80,15 +100,23 @@ namespace EOnlineShop.WebUI.Controllers
                     return View(product);
                 }
 
+                if (file != null)
+                {
+                    productToEdit.Image = product.Id + Path.GetExtension(file.FileName);
+                    file.SaveAs(Server.MapPath("//Content//ProductImages//") + productToEdit.Image);
+                }
+
                 productToEdit.Category = product.Category;
                 productToEdit.Description = product.Description;
-                productToEdit.Image = product.Image;
                 productToEdit.Name = product.Name;
                 productToEdit.Price = product.Price;
+
                 context.Commit();
+
                 return RedirectToAction("Index");
             }
         }
+
         public ActionResult Delete(string Id)
         {
             Product productToDelete = context.Find(Id);

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
+using Microsoft.Owin.Security;  
 using EOnlineShop.WebUI.Models;
 
 namespace EOnlineShop.WebUI.Controllers
@@ -17,6 +17,7 @@ namespace EOnlineShop.WebUI.Controllers
         private ApplicationUserManager _userManager;
 
         public ManageController()
+
         {
         }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using EOnlineShop.core.Models;
+using EOnlineShop.Core.Contracts;
 using EOnlineShop.DataAccess.InMemory;
 using EOnlineShop.DataAccess.InMemory.MyShop.DataAccess.InMemory;
 
@@ -11,11 +12,13 @@ namespace EOnlineShop.WebUI.Controllers
 {
     public class ProductCategoryManagerController : Controller
     {
-        InMemoryRepository<ProductCategory> context;
+        IRepository<ProductCategory> context;
 
-        public ProductCategoryManagerController()
+        
+
+        public ProductCategoryManagerController(IRepository<ProductCategory> categoryContext)
         {
-            context = new InMemoryRepository<ProductCategory>();
+            context = categoryContext;
         }
         // GET: ProductManager
         public ActionResult Index()

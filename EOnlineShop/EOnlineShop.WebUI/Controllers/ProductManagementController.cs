@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using EOnlineShop.core.Models;
 using EOnlineShop.core.ViewModel;
 using EOnlineShop.core.ViewModel;
+using EOnlineShop.Core.Contracts;
 using EOnlineShop.DataAccess.InMemory;
 using EOnlineShop.DataAccess.InMemory.MyShop.DataAccess.InMemory;
 
@@ -15,15 +16,11 @@ namespace EOnlineShop.WebUI.Controllers
 {
     public class ProductManagementController : Controller
     {
-        private InMemoryRepository<Product> context;
-        private InMemoryRepository<ProductCategory> productCategories;
+        private IRepository<Product> context;
+        private IRepository<ProductCategory> productCategories;
 
-        public ProductManagementController()
-        {
-            context = new InMemoryRepository<Product>();
-            productCategories = new InMemoryRepository<ProductCategory>();
-        }
-        public ProductManagementController(InMemoryRepository<Product> productContext, InMemoryRepository<ProductCategory> productCategoryContext)
+      
+        public ProductManagementController(IRepository<Product> productContext, IRepository<ProductCategory> productCategoryContext)
         {
             context = productContext;
             productCategories = productCategoryContext;

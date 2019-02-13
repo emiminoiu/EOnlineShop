@@ -17,7 +17,6 @@ namespace EOnlineShop.WebUI.Controllers
         private ApplicationUserManager _userManager;
 
         public ManageController()
-
         {
         }
 

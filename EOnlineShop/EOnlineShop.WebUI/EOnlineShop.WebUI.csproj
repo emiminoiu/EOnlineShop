@@ -209,6 +209,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ProductImages\720780c9-f6ca-4ebc-8647-4164dea5a3ab.jpg" />
+    <Content Include="Content\ProductImages\7acd2efb-4ac1-457e-b19d-079b430e25f1.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

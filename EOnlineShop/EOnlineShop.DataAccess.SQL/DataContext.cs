@@ -12,7 +12,7 @@ namespace EOnlineShop.DataAccess.SQL
     {
         public DataContext() : base("DefaultConnection")
         {
-
+            Database.SetInitializer<DataContext>(null);
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }

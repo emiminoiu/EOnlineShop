@@ -35,10 +35,12 @@ namespace EOnlineShop.WebUI.Controllers
         public ActionResult Create()
         {
             ProductManagerViewModel viewModel = new ProductManagerViewModel();
+
             viewModel.Product = new Product();
             viewModel.ProductCategories = productCategories.Collection();
             return View(viewModel);
         }
+
 
         [HttpPost]
         public ActionResult Create(Product product, HttpPostedFileBase file)

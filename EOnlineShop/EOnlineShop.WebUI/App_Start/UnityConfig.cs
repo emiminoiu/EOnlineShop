@@ -1,9 +1,12 @@
 using System;
+using EOnlineShop.core.Contracts;
 using EOnlineShop.core.Models;
 using EOnlineShop.Core.Contracts;
 using EOnlineShop.DataAccess.InMemory.MyShop.DataAccess.InMemory;
 using EOnlineShop.DataAccess.SQL;
+using EOnlineShop.Services;
 using Unity;
+using Unity.Injection;
 
 namespace EOnlineShop.WebUI
 {
@@ -47,6 +50,14 @@ namespace EOnlineShop.WebUI
             // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IRepository<Product>, SqlRepository<Product>>();
             container.RegisterType<IRepository<ProductCategory>, SqlRepository<ProductCategory>>();
+            container.RegisterType<IRepository<Basket>, SqlRepository<Basket>>();
+            container.RegisterType<IRepository<BasketItem>, SqlRepository<BasketItem>>();
+            container.RegisterType<IRepository<Customer>, SqlRepository<Customer>>();
+            container.RegisterType<IRepository<Order>, SqlRepository<Order>>();
+            container.RegisterType<IBasketService, BasketService>();
+            container.RegisterType<IOrderInterface, OrderService>();
+      
+
 
         }
     }

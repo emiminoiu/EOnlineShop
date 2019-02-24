@@ -54,13 +54,21 @@ namespace EOnlineShop.WebUI.Controllers
         public ActionResult Details(string Id)
         {
             Product product = context.Find(Id);
+            var viewModel = new BasketItemViewModel()
+            {
+                Id = product.Id,
+                Quanity = 1,
+                ProductName = product.Name,
+                Image = product.Image,
+                Price = product.Price
+            };
             if (product == null)
             {
                 return HttpNotFound();
             }
             else
             {
-                return View(product);
+                return View(viewModel);
             }
         }
 

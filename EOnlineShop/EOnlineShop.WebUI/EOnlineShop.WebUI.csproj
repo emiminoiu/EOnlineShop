@@ -191,6 +191,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BasketController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductCategoryManagerController.cs" />
@@ -217,6 +218,11 @@
     <Content Include="fonts\fonts\slick.eot" />
     <Content Include="fonts\fonts\slick.ttf" />
     <Content Include="fonts\fonts\slick.woff" />
+    <Content Include="Views\Basket\Index.cshtml" />
+    <Content Include="Views\Basket\BasketSummary.cshtml" />
+    <Content Include="Views\Basket\Checkout.cshtml" />
+    <Content Include="Views\Basket\Checkout1.cshtml" />
+    <Content Include="Views\Basket\ThankYou.cshtml" />
     <None Include="Views\Home\FindProductByName.cshtml" />
     <None Include="Views\Home\FindProductByCategory.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />

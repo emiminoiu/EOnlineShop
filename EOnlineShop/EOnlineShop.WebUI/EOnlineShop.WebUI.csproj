@@ -223,6 +223,8 @@
     <Content Include="Views\Basket\Checkout.cshtml" />
     <Content Include="Views\Basket\Checkout1.cshtml" />
     <Content Include="Views\Basket\ThankYou.cshtml" />
+    <Content Include="Views\Basket\ViewOrders.cshtml" />
+    <Content Include="Views\Basket\Index1.cshtml" />
     <None Include="Views\Home\FindProductByName.cshtml" />
     <None Include="Views\Home\FindProductByCategory.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />
@@ -273,7 +275,9 @@
     <Content Include="Scripts\js\nouislider.min.js" />
     <Content Include="Scripts\js\slick.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

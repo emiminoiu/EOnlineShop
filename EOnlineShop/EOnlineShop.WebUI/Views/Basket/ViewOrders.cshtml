@@ -1,0 +1,32 @@
+﻿@model IEnumerable<EOnlineShop.core.Models.Order>
+
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.OrderItems)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+{
+    <tr>
+  
+    <td>
+        @Html.DisplayFor(modelItem => item.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LastName)
+    </td>
+    @*</td>
+        <a href="@Url.Action("OrderedItems", "Basket", new { Id=item.Id })" class="btn btn-primary">See Ordered Items</a>
+    </tr>*@
+    </tr>
+    }
+</table>

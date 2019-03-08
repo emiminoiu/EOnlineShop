@@ -1,0 +1,34 @@
+﻿@model IEnumerable<EOnlineShop.core.ViewModel.BasketItemViewModel>
+@{
+    ViewBag.Title = "Basket";
+}
+
+<h2>Basket</h2>
+
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quanity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            Line Total
+        </th>
+        <th></th>
+    </tr>
+
+  
+    <tr>
+     
+        <td>
+            <a href="/Home/FindProductByCategory?Category=Smartphones" class="btn btn-primary">Continue Shopping</a>
+        </td>
+
+    </tr>
+</table>

@@ -111,7 +111,7 @@
                                 <input type="checkbox" id="category-1">
                                 <label for="category-1">
                                     <span></span>
-                                    <a href="/Home/FindProductByCategory?Category=Laptops" >   Laptops</a>
+                                    <a href="/Home/FindProductByCategory?Category=Laptops">   Laptops</a>
                                     <small>(@Model.Products.Count())</small>
                                 </label>
                             </div>
@@ -120,7 +120,7 @@
                                 <input type="checkbox" id="category-2">
                                 <label for="category-2">
                                     <span></span>
-                                    <a href="/Home/FindProductByCategory?Category=SmartPhones" >     SmartPhones </a>
+                                    <a href="/Home/FindProductByCategory?Category=SmartPhones">     SmartPhones </a>
                                     <small>(@Model.Products.Count())</small>
                                 </label>
                             </div>
@@ -129,24 +129,25 @@
                                 <input type="checkbox" id="category-3">
                                 <label for="category-3">
                                     <span></span>
-                                    <a href="/Home/FindProductByCategory?Category=Cameras" >    Cameras </a>
+                                    <a href="/Home/FindProductByCategory?Category=Cameras">    Cameras </a>
                                     <small>(@Model.Products.Count())</small>
                                 </label>
                             </div>
 
                             <div class="input-checkbox">
-                            
+
                                 <input type="checkbox" id="category-4">
-                                
-                                    <label for="category-4">
-                                        <a href="/Home/FindProductByCategory?Category=Audio">
-                                            <span></span></a>
-                                            <a href="/Home/FindProductByCategory?Category=Audio" > Audio  </a>
-                                            <small>(@Model.Products.Count())</small>
+
+                                <label for="category-4">
+                                    <a href="/Home/FindProductByCategory?Category=Audio">
+                                        <span></span>
+                                    </a>
+                                    <a href="/Home/FindProductByCategory?Category=Audio"> Audio  </a>
+                                    <small>(@Model.Products.Count())</small>
                                 </label>
-                                  
-                                 
-                                       
+
+
+
                             </div>
 
                             <div class="input-checkbox">
@@ -189,59 +190,67 @@
                     </div>
                     <!-- /aside Widget -->
                     <!-- aside Widget -->
-                    <div class="aside">
-                        <h3 class="aside-title">Brand</h3>
-                        <div class="checkbox-filter">
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="brand-1">
-                                <label for="brand-1">
-                                    <span></span>
-                                    SAMSUNG
-                                    <small>(578)</small>
-                                </label>
-                            </div>
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="brand-2">
-                                <label for="brand-2">
-                                    <span></span>
-                                    LG
-                                    <small>(125)</small>
-                                </label>
-                            </div>
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="brand-3">
-                                <label for="brand-3">
-                                    <span></span>
-                                    SONY
-                                    <small>(755)</small>
-                                </label>
-                            </div>
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="brand-4">
-                                <label for="brand-4">
-                                    <span></span>
-                                    SAMSUNG
-                                    <small>(578)</small>
-                                </label>
-                            </div>
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="brand-5">
-                                <label for="brand-5">
-                                    <span></span>
-                                    LG
-                                    <small>(125)</small>
-                                </label>
-                            </div>
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="brand-6">
-                                <label for="brand-6">
-                                    <span></span>
-                                    SONY
-                                    <small>(755)</small>
-                                </label>
+                    <br />
+                    <br />
+                    <h3 class="aside-title">Brands</h3>
+                    <br />
+                    @foreach (var item1 in Model.Brands)
+                    {
+                        <div class="aside">
+
+                            <div class="checkbox-filter">
+                                <div class="input-checkbox">
+                                    <input type="checkbox" id="brand-1">
+                                    <label for="brand-1">
+                                        <span></span>
+                                        @item1.Name
+                                        <small>(578)</small>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    }
+                    @*<div class="input-checkbox">
+            <input type="checkbox" id="brand-2">
+            <label for="brand-2">
+                <span></span>
+                Apple
+                <small>(125)</small>
+            </label>
+        </div>
+        <div class="input-checkbox">
+            <input type="checkbox" id="brand-3">
+            <label for="brand-3">
+                <span></span>
+                SONY
+                <small>(755)</small>
+            </label>
+        </div>
+        <div class="input-checkbox">
+            <input type="checkbox" id="brand-4">
+            <label for="brand-4">
+                <span></span>
+               LG
+                <small>(578)</small>
+            </label>
+        </div>
+        <div class="input-checkbox">
+            <input type="checkbox" id="brand-5">
+            <label for="brand-5">
+                <span></span>
+                HTC
+                <small>(125)</small>
+            </label>
+        </div>
+        <div class="input-checkbox">
+            <input type="checkbox" id="brand-6">
+            <label for="brand-6">
+                <span></span>
+                Huawei
+                <small>(755)</small>
+            </label>
+        </div>*@
+
                     <!-- /aside Widget -->
                     <!-- aside Widget -->
                     <div class="aside">
@@ -321,7 +330,7 @@
 
                                     </div>
                                     <div class="product-body">
-                                        <p class="product-category">Category</p>
+                                        <p class="product-category">@item.Category</p>
                                         <h3 class="product-name"><a href="#">@Html.ActionLink(item.Name, "Details", new { id = item.Id })</a></h3>
                                         <h4 class="product-price">@item.Price lei</h4>
 

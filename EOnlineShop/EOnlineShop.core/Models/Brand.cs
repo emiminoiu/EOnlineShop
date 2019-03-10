@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace EOnlineShop.core.Models
 {
-    public class ProductCategory : BaseEntity
+    public class Brand : BaseEntity
     {
-        public string Category { get; set; }
-
-        public virtual List<Brand> CategoryBrands { get; set; }
+        public string CategoryName { get; set; }
+        public string Name { get; set; }
 
     }
 }

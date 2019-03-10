@@ -50,6 +50,7 @@ namespace EOnlineShop.WebUI
             // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IRepository<Product>, SqlRepository<Product>>();
             container.RegisterType<IRepository<ProductCategory>, SqlRepository<ProductCategory>>();
+            container.RegisterType<IRepository<Brand>, SqlRepository<Brand>>();
             container.RegisterType<IRepository<Basket>, SqlRepository<Basket>>();
             container.RegisterType<IRepository<BasketItem>, SqlRepository<BasketItem>>();
             container.RegisterType<IRepository<Customer>, SqlRepository<Customer>>();

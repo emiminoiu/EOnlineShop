@@ -36,5 +36,22 @@ namespace EOnlineShop.Services
                 orderContext.Commit();
             }
         }
+
+        public List<Order> getOrderList()
+        {
+            return orderContext.Collection().ToList();
+        }
+
+        public Order getOrder(string Id)
+        {
+            return orderContext.Find(Id);
+        }
+
+        public void UpdateOrder(Order updatedOrder)
+        {
+            orderContext.Update(updatedOrder);
+            orderContext.Commit();
+        }
+
     }
 }

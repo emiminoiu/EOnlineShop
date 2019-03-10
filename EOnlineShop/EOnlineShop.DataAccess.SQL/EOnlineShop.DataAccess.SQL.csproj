@@ -65,6 +65,18 @@
     <Compile Include="Migrations\201902222013474_AddOrder.Designer.cs">
       <DependentUpon>201902222013474_AddOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903101134213_AddBrands.cs" />
+    <Compile Include="Migrations\201903101134213_AddBrands.Designer.cs">
+      <DependentUpon>201903101134213_AddBrands.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903101856372_UpdatingBrandTable.cs" />
+    <Compile Include="Migrations\201903101856372_UpdatingBrandTable.Designer.cs">
+      <DependentUpon>201903101856372_UpdatingBrandTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903102028128_NewUpdateOnBrands.cs" />
+    <Compile Include="Migrations\201903102028128_NewUpdateOnBrands.Designer.cs">
+      <DependentUpon>201903102028128_NewUpdateOnBrands.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlRepository.cs" />
@@ -91,6 +103,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902222013474_AddOrder.resx">
       <DependentUpon>201902222013474_AddOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903101134213_AddBrands.resx">
+      <DependentUpon>201903101134213_AddBrands.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903101856372_UpdatingBrandTable.resx">
+      <DependentUpon>201903101856372_UpdatingBrandTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903102028128_NewUpdateOnBrands.resx">
+      <DependentUpon>201903102028128_NewUpdateOnBrands.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

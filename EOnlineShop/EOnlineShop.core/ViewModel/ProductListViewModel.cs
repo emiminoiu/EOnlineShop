@@ -11,5 +11,9 @@ namespace EOnlineShop.core.ViewModel
     {
         public IEnumerable<Product> Products { get; set; }
         public IEnumerable<ProductCategory> ProductCategories { get; set; }
+        public IEnumerable<Brand> Brands { get; set; }
+
+
+
     }
 }

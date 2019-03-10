@@ -9,7 +9,7 @@ namespace EOnlineShop.DataAccess.SQL.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(EOnlineShop.DataAccess.SQL.DataContext context)
